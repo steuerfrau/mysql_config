@@ -1,0 +1,29 @@
+[mysqld]
+# Namen der Parameter mit Quatschwerten
+
+# key_buffer         = 256M
+# max_allowed_packet = 16M
+# max_binlog_size    = 100M
+# max_connections    = 50
+# table_cache        = 64
+# thread_cache_size  = 8
+# thread_stack       = 128K
+#
+# Werte aus Datenbank auf phorms1
+
+# key-buffer-size                                   8388608
+# low-priority-updates                              FALSE
+# max-allowed-packet                                1048576
+# max-binlog-size                                   1073741824
+# max-connections                                   151
+# max-long-data-size                                1048576
+# 
+# myisam-recover-options                            OFF
+# query-cache-limit                                 1048576
+# query-cache-size                                  0
+# server-id                                         43
+# 
+# table-cache                                       400
+# table-open-cache                                  400
+# thread-cache-size                                 0
+# thread-stack                                      262144

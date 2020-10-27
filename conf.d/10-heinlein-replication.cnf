@@ -1,0 +1,30 @@
+[mysqld]
+
+server_id = 43
+relay_log = mysql-relay-bin
+read_only = 1
+
+# ergaenzt um
+#	transactions_flat_unfiltered 
+# thommy 2020-07-04
+
+replicate-ignore-table=schulengel.transactions_flat
+replicate-ignore-table=schulengel.transactions_flat_offline
+replicate-ignore-table=schulengel.transactions_flat_unfiltered
+replicate-ignore-table=schulengel_stage.transactions_flat
+replicate-ignore-table=schulengel_stage.transactions_flat_offline
+replicate-ignore-table=schulengel_stage.transactions_flat_unfiltered
+
+# ab hier neu  
+# thommy 2020-07-04 (nur diese DBs werden lt. Herrn Kiefer benoetigt)
+replicate-do-db=schulengel
+replicate-do-db=schulengel_automailer_prod
+replicate-do-db=schulengel_prod_typo3
+replicate-do-db=spendenideen_org
+
+# m.desaive 2020-10-07 fix ERROR 1114 (HY000) at line 3699: The table 'transactions_flat' is full
+innodb_data_file_path = ibdata1:10M:autoextend
+innodb_file_per_table=1
+max_heap_table_size       = 6G
+tmp_table_size            = 6G
+
