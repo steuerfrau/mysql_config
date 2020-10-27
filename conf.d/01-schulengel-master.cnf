@@ -1,0 +1,18 @@
+[mysqld]
+
+# m.desaive 8.0 ERROR 
+# language  = /usr/share/mysql/english
+# bind-address   = 127.0.0.1
+
+low_priority_updates  = 1
+key_buffer    = 1024M
+
+thread_cache_size       = 100
+
+max_connections        = 400
+table_cache            = 1000
+tmp_table_size         = 1500M
+max_heap_table_size    = 1500M
+
+query_cache_limit = 10M
+query_cache_size        = 1024M
